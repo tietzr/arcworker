@@ -1,4 +1,4 @@
-package worker
+package main
 
 // Worker model
 type Worker struct {

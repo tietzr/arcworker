@@ -1,4 +1,4 @@
-package worker
+package main
 
 import (
 	"log"
@@ -6,10 +6,6 @@ import (
 
 	"github.com/gorilla/mux"
 )
-
-// Imports
-
-var controller = &Controller{Repository: Repository{}}
 
 // Route defines a route
 type Route struct {
@@ -27,13 +23,19 @@ var routes = Routes{
 		"Index",
 		"GET",
 		"/",
-		controller.Index,
+		Index,
+	},
+	Route{
+		"GetAll",
+		"GET",
+		"/workers",
+		GetAll,
 	},
 	Route{
 		"AddWorker",
 		"POST",
-		"/worker",
-		controller.AddWorker,
+		"/workers",
+		AddWorker,
 	},
 }
 
